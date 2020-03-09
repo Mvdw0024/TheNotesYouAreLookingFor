@@ -1,6 +1,7 @@
 package vandewouwer.michael.thenotesyouarelookingfor.Utils;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,19 +123,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String input = charSequence.toString();
                 notes = searchNotes;
-                if (input.isEmpty()) {
+                if (input.equals("")) {
                     notes = searchNotes;
                 } else {
-                    ArrayList<Note> filteredList = new ArrayList<>();
+                    List<Note> filteredList = new ArrayList<>();
                     for (Note element : notes) {
-                        if (element.getTitle().contains(input.toLowerCase())) {
+                        if (element.getTitle().toLowerCase().contains(input.toLowerCase())) {
                             filteredList.add(element);
                         }
                         notes = filteredList;
                     }
                 }
                 return null;
-
             }
 
             @Override
