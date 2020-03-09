@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Filter options">
+
+    </PreferenceCategory>
+    <ListPreference
+        android:defaultValue="true"
+        android:entries="@array/Standardarrangeoptions"
+        android:entryValues="@array/Standardarrangeoptions"
+        android:key="prefsort"
+        android:summary="%s"
+        android:title="Arrange" />
+</PreferenceScreen>
